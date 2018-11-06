@@ -190,7 +190,7 @@ defmodule Lampshade.TemperatureServer do
           |> Enum.map(
             fn {_group_id, group_info} -> 
               {:ok, light_values} = calculate_light_values(sunlight)
-              Logger.error "Updating temperature values for newly discovered light group #{group_info["name"]}."
+              Logger.debug "Updating temperature values for newly discovered light group #{group_info["name"]}."
               Enum.each(group_info["lights"],
                 fn light ->
                   set_light_state(group_info, light, light_values, bridge)
