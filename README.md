@@ -58,13 +58,36 @@ config :lampshade,
 
 Some values in the configuration file come already preset for convenience. These values can be adjusted to your specific preference. More information on those fields can be found in the annotated sample configuration file mentioned at the top of this section.
 
-Four configuration values need to be set or changed before running Lampshade for the first time. These values are `username`, `bridge_address`, `latitude`, and `longitude`.
+Five configuration values need to be set or changed before running Lampshade for the first time. These values are `username`, `bridge_address`, `temperature_light_groups`, `latitude`, and `longitude`.
 
 `username` should be set to your Hue Bridge Username that you retrieved from the **Phillips Hue Bridge Prepration** section above.
 
+_Example `username` configuration_
+```
+  username: "TX1B1eTc04PTN4ngbTYYYzQePnzHIpQ13511X3CP",
+```
+
 `bridge_address` should be set to your Hue Bridge ip address that you retrieved from the **Phillips Hub Bridge Preparation** section above. This parameter can also optionally be removed entirely from the configuration file entirely. Doing so wil cause Lampshade to fall back to SSDP meaning it will attempt to self-discover the bridge on its own. If you decide to use SSDP you may need to push the button on your bridge the first time Lampshade attempts to find it. Follow-up runs of Lampshade should discover the bridge on its own.
 
+_Example `bridge_address` configuration_
+```
+ bridge_address: "192.168.0.103",
+ ```
+
+`temperature_light_groups` is a collection of light groups that you want Lampshade to monitor and adjust throughout the day. The names of the groups are the same as "room names" that you add lights to within the Hue App. Lampshade will also rpovide you with a list of all light group names that belong to the corresponding bridge when you start the application.
+
+_Example `temperature_light_groups` configuration_
+```
+ temperature_light_groups: ["My Bedroom", "Hallway", "Living Room"],
+```
+
 `latitude` and `longitude` should be set to your location. By default they are set to the coordinates of Mount Everest. Lampshade needs these values in order to determine the correct sunset, sunrise, and solar noon times for your area. Without this information Lampshade will not be able to keep your light's brightness and color temperatures correct for the current time of day at your location. You can retrieve your latitude and longitude information by visiting [https://sunrise-sunset.org/](https://sunrise-sunset.org/) and entering your postal code in the search box on the site. 
+
+_Example `latitude` and `longitude` configuration_
+```
+  latitude: 27.9881,
+  longitude: 86.9250,
+```
 
 ## Attributions
 Sunrise Sunset - [https://sunrise-sunset.org/](https://sunrise-sunset.org/)
