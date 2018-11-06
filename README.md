@@ -74,7 +74,7 @@ _Example `bridge_address` configuration_
  bridge_address: "192.168.0.103",
  ```
 
-`temperature_light_groups` is a collection of light groups that you want Lampshade to monitor and adjust throughout the day. The names of the groups are the same as "room names" that you add lights to within the Hue App. Lampshade will also rpovide you with a list of all light group names that belong to the corresponding bridge when you start the application.
+`temperature_light_groups` is a collection of light groups that you want Lampshade to monitor and adjust throughout the day. The names of the groups are the same as "room names" that you add lights to within the Hue App. Lampshade will also provide you with a list of all light group names that belong to the corresponding bridge when you start the application.
 
 _Example `temperature_light_groups` configuration_
 ```
